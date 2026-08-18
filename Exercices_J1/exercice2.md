@@ -25,7 +25,14 @@ docker images
    - Supprimez l'image Nginx que vous venez de télécharger de votre machine.
 ```bash
 docker rm id-nginx
+
+# Si je veux supprimer tous les containers qui sont en status exited
+docker rm $(docker ps --filter status=created -q)
+
 docker rmi nginx
+
+# Si je veux supprimer toutes les images dans mon docker
+docker rmi -f $(docker images -aq)
 ```
 
 4. **Téléchargement de plusieurs images :**
