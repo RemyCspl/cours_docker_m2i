@@ -9,33 +9,38 @@ Ce exercice vise à évaluer votre compréhension et votre maîtrise des command
    - Assurez-vous d'avoir Docker installé sur votre machine.
    - Ouvrez un terminal.
 
-```bash
-
-```
-
 2. **Création d'un container Alpine :**
    - Utilisez la commande Docker pour créer un container basé sur l'image Alpine.
    - Connectez-vous au shell du container nouvellement créé.
 ```bash
+docker pull alpine
 
+docker run -it alpine
 ```
 
 3. **Récupération d'un dépôt GitHub :**
    - À l'intérieur du container, utilisez la commande `git` pour cloner un dépôt public depuis GitHub (par exemple, https://github.com/votre-utilisateur/exemple-repo.git).
    - Allez dans le répertoire du dépôt cloné.
 ```bash
+#Installer git sur Alpine
+apk add git
 
+git clone https://github.com/RemyCspl/cours_docker_m2i
+
+cd cours_docker_m2i
 ```
 
 4. **Modification du contenu :**
    - À l'intérieur du container, ouvrez un fichier texte (par exemple, README.md) à l'aide d'un éditeur de texte disponible dans l'image Alpine.
    - Ajoutez une ligne de texte à votre choix et enregistrez le fichier.
 ```bash
-
+vi README.md
 ```
 
 5. **Copie du résultat sur la machine locale :**
    - Depuis votre terminal local, utilisez la commande Docker pour copier le fichier modifié depuis le container vers votre machine locale, dans un répertoire de votre choix.
 ```bash
+exit
 
+docker cp gallant_cori:/cours_docker_m2i C:/Users/Administrateur/Documents
 ```
