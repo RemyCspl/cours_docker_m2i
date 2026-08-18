@@ -24,6 +24,7 @@ docker images
 3. **Suppression d'une image :**
    - Supprimez l'image Nginx que vous venez de télécharger de votre machine.
 ```bash
+docker rm id-nginx
 docker rmi nginx
 ```
 
