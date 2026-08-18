@@ -6,12 +6,14 @@
 
 - Créer une image Docker sur votre machine du jeu 2048 (voir screen jeux_2048).
 ```bash
-
+docker search 2048
+docker pull quchaonet/2048
+docker run -d --name game2048 -p 8080:8080 quchaonet/2048
 ```
 
 - Vérifier que l’image est bien présente sur votre machine.
 ```bash
-
+docker images
 ```
 
 - Lancer ce jeu sur un port disponible au travers d’un conteneur que vous allez appeler «jeu-votre-nom ». 
