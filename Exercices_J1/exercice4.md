@@ -75,3 +75,8 @@ Welcome «votre prenom ».
 - html5up-paradigm-shift.zip pour nginx-web5
 
 - Stopper, ensuite, ces différents conteneurs.
+
+Copier un fichier depuis la machine hote sur le conteneur :
+```bash
+docker cp CHEMIN_HOTE NOM_CONTENEUR:CHEMIN_DISTANT
+```
