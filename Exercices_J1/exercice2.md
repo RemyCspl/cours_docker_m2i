@@ -27,7 +27,7 @@ docker images
 docker rm id-nginx
 
 # Si je veux supprimer tous les containers qui sont en status exited
-docker rm $(docker ps --filter status=created -q)
+docker rm $(docker ps --filter status=exited -q)
 
 docker rmi nginx
 
