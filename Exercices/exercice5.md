@@ -158,4 +158,10 @@ Le site situé à localhost:8081 affiche toujours bien le bon website avec les m
 
 Aucune nouvelle copie du site ne doit être effectuée.
 
- 
+# Essais avec un volume bind mount
+
+Création d'un nouveau conteneur utilisant Nginx et synchronisant les fichiers contenus dans mon website local
+
+```bash
+docker run -d -v C:\Users\Administrateur\Documents\.repos\cours_docker_m2i\Exercices\files_tp_conteneur\html:/usr/share/nginx/html/ -p 8080:80 --name nginx-website nginx
+```
