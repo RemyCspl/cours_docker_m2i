@@ -177,4 +177,7 @@ docker rm $(docker ps --filter status=exited -q)
 
 # Supprimer toutes les images dans mon docker
 docker rmi -f $(docker images -aq)
+
+#Faire les 3 commandes d'un coup: 
+docker stop $(docker ps -q); docker rm $(docker ps --filter status=exited -q); docker rmi -f $(docker images -aq)
 ```

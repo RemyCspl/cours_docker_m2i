@@ -17,6 +17,9 @@ RUN git clone https://github.com/withaarzoo/3D-Rotate-Tube
 RUN mv 3D-Rotate-Tube/* ./
 RUN rm -rf 3D-Rotate-Tube
 
+# Pour faire l'équivalent des trois dernières commandes d'un coup
+RUN git clone https://github.com/withaarzoo/3D-Rotate-Tube .
+
 EXPOSE 80
 
 CMD [ "nginx", "-g", "daemon off;" ] 
