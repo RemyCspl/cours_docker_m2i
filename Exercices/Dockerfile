@@ -1,14 +1,15 @@
-FROM nginx:latest
+FROM caddy:latest
 
-WORKDIR /usr/share/nginx/html
+WORKDIR /usr/share/caddy/
 
-RUN apt update
-RUN apt install git -y
-RUN rm -rf ./*
-RUN git clone https://github.com/withaarzoo/3D-Rotate-Tube
-RUN mv 3D-Rotate-Tube/* ./
-RUN rm -rf 3D-Rotate-Tube
+COPY ./files_tp_conteneur/html5up-paradigm-shift.zip ./
+
+RUN apk update
+RUN apk add unzip
+RUN rm index.html
+RUN unzip ./html5up-paradigm-shift.zip -d ./
+RUN rm -rf html5up-paradigm-shift.zip
 
 EXPOSE 80
 
-CMD [ "nginx", "-g", "daemon off;" ] 
+CMD [ "caddy", "run", "--config", "/etc/caddy/Caddyfile", "--adapter", "caddyfile" ]

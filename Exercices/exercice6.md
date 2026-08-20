@@ -32,4 +32,3 @@ docker run -d -p 8080:80 --name site1 site-perso:1.0
 ```
 
 la commande à utiliser à la fin du dockerfile : CMD ["nginx","-g","daemon off;"]
- 
