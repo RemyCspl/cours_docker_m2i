@@ -1,0 +1,6 @@
+services:
+  nginx-site:
+    container_name: nginx-website1
+    ports:
+      - "8080:80"
+    build: ./editorial.dockerfile
